@@ -1,38 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Yellowtail&display=swap');
+
+:root {
+  --text-font: open Sans, sans-serif;
+  --title-font: Yellowtail, sans-serif;
+
+  --main-color: rgb(80, 165, 245);
+  --text-color: rgb(42, 41, 41);
+  --text-color-light: #808080;
+
+
+  --dark: #03045E;
+  --medium-dark: #0077B6;
+  --medium: #00B4D8;
+  --medium-light: #90E0EF;
+  --light: #CAF0F8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--text-font);
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+#navigation {
+  width: 25%;
+  min-width: 250px;
+  flex: 1;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#environment {
+  height: 100%;
+  width: 100%;
 }

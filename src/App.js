@@ -1,23 +1,44 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
+import Dashboard from './pages/Dashboard';
+import Vacancies from './pages/Vacancies';
+import Companies from "./pages/Companies";
 
-function App() {
+import Navigation from './components/Navigation';
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const App = () => {
+
+  const createNotification = (type, message) => {
+    if (type === "info") {
+      NotificationManager.info(message);
+    } else if (type === "success") {
+      NotificationManager.success(message);
+    } else if (type === "warning") {
+      NotificationManager.warning(message);
+    } else if (type === "error") {
+      NotificationManager.error(message);
+    }
+  };
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter basename="/">
+      <NotificationContainer />
+      <Navigation />
+      <div id="environment">
+        <Routes>
+          <Route path="/" element={<Dashboard createNotification={createNotification} />} />
+          <Route path="/vacancies" element={<Vacancies createNotification={createNotification} />} />
+          <Route path="/companies" element={<Companies createNotification={createNotification} />} />
+        </Routes>
+      </div>
+      </BrowserRouter>
     </div>
   );
 }

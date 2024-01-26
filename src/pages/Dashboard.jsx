@@ -54,13 +54,13 @@ const Dashboard = (props) => {
                         <div className="slideItem">
                             <figure><img src="https://picsum.photos/300/300" alt="placeholder" /></figure>
                             <div>
-                                <span>{latestEvent.from_vacancy.actual_company ? latestEvent.from_vacancy.actual_company.name : latestEvent.from_vacancy.recruitment_company.name}</span>
+                                <span>{latestEvent.from_vacancy.actual_company ? latestEvent.from_vacancy.actual_company.name : latestEvent.from_vacancy.recruitment_company ? latestEvent.from_vacancy.recruitment_company.name : ""}</span>
                                 <h3>{latestEvent.datetime.split(' - ')[0]}</h3>
                                 <h3>{latestEvent.datetime.split(' - ')[1]}</h3>
                             </div>
                             <div>
-                                <h3>{latestEvent.from_vacancy.actual_company ? latestEvent.from_vacancy.from_vacancy.recruitment_company ? 'Recruitment' : 'In-house' : latestEvent.from_vacancy.recruitment_company.recruitment_company ? 'Recruitment' : 'In-house'}</h3>
-                                <h3>{latestEvent.from_vacancy.actual_company ? latestEvent.from_vacancy.recruitment_company.location.location ? latestEvent.from_vacancy.recruitment_company.location.location : '-' : latestEvent.from_vacancy.recruitment_company.location ? latestEvent.from_vacancy.recruitment_company.location : '-'}</h3>
+                                <h3>{latestEvent.from_vacancy.actual_company ? latestEvent.from_vacancy.actual_company.recruitment_company ? 'Recruitment' : 'In-house' : latestEvent.from_vacancy.recruitment_company.recruitment_company ? 'Recruitment' : 'In-house'}</h3>
+                                <h3>{latestEvent.from_vacancy.actual_company ? latestEvent.from_vacancy.actual_company.location ? latestEvent.from_vacancy.actual_company.location : '-' : latestEvent.from_vacancy.recruitment_company.location ? latestEvent.from_vacancy.recruitment_company.location : '-'}</h3>
                             </div>
                         </div>}
                 </div>

@@ -36,8 +36,9 @@ const Events = (props) => {
                                 <h4>{ev.datetime.split(' - ')[1]}</h4>
                             </div>
                             <div className="description">
-                                <span>{ev.from_vacancy.role}</span>
                                 <h4>{ev.from_vacancy.actual_company ? ev.from_vacancy.actual_company.name : ev.from_vacancy.recruitment_company.name}</h4>
+                                <span>{ev.from_vacancy.role}</span>
+                                <span>{ev.interview_type}</span>
                             </div>
                         </div>
 
